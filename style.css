@@ -1,0 +1,104 @@
+body {
+    font-family: 'Cardo', serif;
+   }
+   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+   }
+
+section {
+    padding: 50px 0px;
+    width: 100%;
+}
+
+.logo img {
+    height: 100px;
+}
+.hero img{
+    height: 600px;
+    width: 100%;
+}
+.about-img, .about-text {
+    height: 500px
+}
+.about-text {
+    text-align: justify;
+    padding-top: 100px;
+}
+.about-text h2 {
+    margin-bottom: 25px;
+} 
+.read-more {
+    background-color: gold;
+    padding: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.features{
+    margin: 25px 0px;
+}
+
+.feature-title, .feature-icon {
+    font-size: 28px;
+    font-weight: bold;
+}
+.feature-text {
+    text-align: justify;
+}
+
+.features .focus {
+    background-color: blueviolet;
+    color: white;
+    /* padding: 40px 20px; */
+    margin-top: 50px;
+}
+
+.high-call {
+    padding: 80px 0px;
+    background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -51vw;
+    margin-right: -50vw;
+}
+
+.high-call .row {
+    margin: 0px;
+    padding: 10px;
+}
+
+.blog-img {
+    height: 200px;
+    width: 100%;
+}
+
+.counter {
+    background-image: url('images/brick-wall-dark.png');
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -51vw;
+    margin-right: -50vw;
+}
+
+.counter .row {
+    margin: 0px;
+    padding: 10px;
+}
+.counter-body {
+        font-size: 20px;
+        font-weight: 700;
+        color: darkmagenta;
+}
+.counter-head {
+    font-weight: 800;
+    font-size: 40px;
+}

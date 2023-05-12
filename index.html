@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resitrend</title>
+    <!-- //add bootstrap 5 css file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+
+    <!-- // custom css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+    <style>
+        .banner{
+            position: relative;
+            width: 100%;
+        }
+        .banner-title {
+            font-size: 35px;
+            position: absolute;
+            top: 280px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="logo col-6">
+                <img src="data:image/png;base64,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" alt="Logo">
+            </div>
+            <nav class="col-6">
+                <ul class="nav justify-content-end mt-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Price</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Support</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">Contact</a>
+                    </li>
+                  </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="row">
+                    <div class="banner col">
+                        <img class="banner-img" src="https://images.pexels.com/photos/139309/pexels-photo-139309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        <h1 class="banner-title">Hellow World</h1>
+                    </div>
+                </div>
+            </section>
+            <section class="about mt-5">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="about-img">
+                            <img class="rounded-pill w-100" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80" alt="">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-text">
+                            <h4>This is a subtitle just</h4>
+                            <h2>This is the main title</h2>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In voluptatum, repellendus, nemo optio consequuntur ut officia error ipsa quis pariatur magni voluptatibus veritatis. Neque natus quibusdam voluptates sequi laborum quasi!
+                            </p>
+                            
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <span class="col-8 feature-title">Feature 1</span>
+                            <span class="col-4 feature-icon text-end"><i class="bi bi-bookshelf"></i></span>
+                        </div>
+                        <p class="feature-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus accusamus dolorem praesentium aspernatur soluta nostrum qui ipsa incidunt quidem corrupti recusandae molestiae, voluptatem, nesciunt quia voluptatibus quaerat eum at? Debitis.</p>
+                    </div>
+                    <div class="col-4 focus">
+                        <div class="row">
+                        <span class="col-8 feature-title">Feature 2</span>
+                        <span class="col-4 feature-icon text-end"><i class="bi bi-binoculars-fill"></i></span>
+                        </div>
+                        <p class="feature-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus accusamus dolorem praesentium aspernatur soluta nostrum qui ipsa incidunt quidem corrupti recusandae molestiae, voluptatem, nesciunt quia voluptatibus quaerat eum at? Debitis.</p>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                        <span class="col-8 feature-title">Feature 3</span>
+                        <span class="col-4 feature-icon text-end"><i class="bi bi-arrow-through-heart"></i></span>
+                        </div>
+                        <p class="feature-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus accusamus dolorem praesentium aspernatur soluta nostrum qui ipsa incidunt quidem corrupti recusandae molestiae, voluptatem, nesciunt quia voluptatibus quaerat eum at? Debitis.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="high-call">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1 class="high-call-h1">Everything you need to get ahead</h1>
+                        <h4>+880 1717 444 555</h4>
+                    </div>
+                </div>
+            </section>
+            <section class="blog">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="p-5 text-center">You will get continuous knowledge of latest techs</h1>
+                    </div>
+                    <div class="col-4">
+                        <div class="blog-item">
+                            <h4 class="blog-title">This is a blog title</h4>
+                            <div class="row">
+                                <div class="col-6">Author Name</div>
+                                <div class="col-6 text-end"><small class="">Jan 05, 2023</small></div>
+                            </div>
+                            <img src="https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="blog-img">
+                            <p class="blog-body">
+                                <a href="#" class="btn btn-sm btn-info mt-2 blog-ling">Read <i class="bi bi-arrow-right-short"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="blog-item">
+                            <h4 class="blog-title">This is a blog title</h4>
+                            <div class="row">
+                                <div class="col-6">Author Name</div>
+                                <div class="col-6 text-end"><small class="">Jan 05, 2023</small></div>
+                            </div>
+                            <img src="https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="blog-img rounded-top">
+                            <p class="blog-body">
+                                <a href="#" class="btn btn-sm btn-info mt-2 blog-ling">Read <i class="bi bi-arrow-right-short"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="blog-item">
+                            <h4 class="blog-title">This is a blog title</h4>
+                            <div class="row">
+                                <div class="col-6">Author Name</div>
+                                <div class="col-6 text-end"><small class="">Jan 05, 2023</small></div>
+                            </div>
+                            <img src="https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="blog-img">
+                            <p class="blog-body">
+                                <a href="#" type="button" class="btn btn-sm btn-info mt-2 blog-ling">Read <i class="bi bi-arrow-right-short"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="partners">
+                <h1 class="partners-title pb-5">Meet our partners</h1>
+                <div class="customer-logos slider">
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+                    <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>   
+                </div>           
+            </section>
+            <section class="counter">
+                <h1 class="counter-title text-center">Counting parameters</h1>
+                <div class="row">
+                    <div class="col-3 pt-5 pb-5">
+                        <div class="counter-item text-center">
+                            <h2 class="counter-head text-success">100 Thousands</h2>
+                            <p class="counter-body text-success-emphasis">installations running with happiness</p>
+                        </div>
+                    </div>
+                    <div class="col-3 pt-5 pb-5">
+                        <div class="counter-item text-center">
+                            <h2 class="counter-head text-success">100 Thousands</h2>
+                            <p class="counter-body text-success-emphasis">installations running with happiness</p>
+                        </div>
+                    </div>
+                    <div class="col-3 pt-5 pb-5">
+                        <div class="counter-item text-center">
+                            <h2 class="counter-head text-success">100 Thousands</h2>
+                            <p class="counter-body text-success-emphasis">installations running with happiness</p>
+                        </div>
+                    </div>
+                    <div class="col-3 pt-5 pb-5">
+                        <div class="counter-item text-center">
+                            <h2 class="counter-head text-success">100 Thousands</h2>
+                            <p class="counter-body text-success-emphasis">installations running with happiness</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="social-media">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-youtube"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </p>
+                    <p>
+                        <small>All rights reserved &copy; 2023</small>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+<!-- // add bootstrap 5 js file -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+<!-- //add bundel js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="custom.js"></script>
+</body>
+</html>
